@@ -4,7 +4,7 @@ use warnings;
 use strict;
 use Filter::Simple;
 use PPI;
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 FILTER {
   my $doc = PPI::Document->new(\$_);
   $_->set_content(sprintf 'do{local $_=%s;chomp;$_}', $_->content)
@@ -27,7 +27,7 @@ Backtick::AutoChomp - auto-chomp() result of backtick(``) and qx//
 
 =head1 VERSION
 
-Version 0.01
+Version 0.02
 
 =head1 SYNOPSIS
 
